@@ -15,5 +15,7 @@ Upstream master links explain implementation concepts; they are not asserted to
 be the exact source revision of the test kernel. Firmware method descriptions
 come from offline disassembly of this machine's ACPI tables. Raw firmware tables,
 full journals, private conversation logs and third-party driver sources are not
-included. Original notes and scripts were prepared with AI assistance and checked
-against local evidence; independent reproductions are welcome.
+included. No Apple firmware, AML bytecode, decompiled ACPI tables, or proprietary
+Apple binaries are redistributed by this repository. Original notes and scripts
+were prepared with AI assistance and checked against local evidence; independent
+reproductions are welcome.
