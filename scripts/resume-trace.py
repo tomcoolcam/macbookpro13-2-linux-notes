@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """One instrumented s2idle cycle, or a tracing-only check. No PCI resets."""
 import argparse
 from contextlib import contextmanager
