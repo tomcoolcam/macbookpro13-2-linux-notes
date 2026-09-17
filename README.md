@@ -3,6 +3,9 @@
 Reproducible observations from Linux suspend/resume and Touch Bar experiments
 on an Apple MacBookPro13,2. This is an investigation log, not a working suspend fix.
 
+> MacBook Pro is a trademark of Apple Inc. This independent project is not
+> affiliated with, sponsored by, or endorsed by Apple Inc.
+
 ## Current findings
 
 | Component | Observed behavior |
