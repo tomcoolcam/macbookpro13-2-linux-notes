@@ -19,6 +19,8 @@ to this configuration. The external storage device was disconnected for testing.
 
 ## Evidence
 
+- [Linux installation and configuration](docs/linux-setup.md)
+
 - [Latest experiment and analysis](docs/2026-09-17-s2idle.md)
 - [Earlier observations and limitations](docs/background.md)
 - [Diagnostic script and usage](scripts/README.md)
