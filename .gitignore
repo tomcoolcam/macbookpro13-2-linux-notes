@@ -2,4 +2,16 @@ __pycache__/
 *.pyc
 results/
 .env
+.env.*
 *.key
+*.pem
+*.p12
+*.pfx
+*.pcap
+*.pcapng
+*.log
+*.journal
+*.aml
+*.rom
+*.dump
+private/
