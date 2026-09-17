@@ -1,5 +1,23 @@
 # Sources and attribution
 
+## Native PMCSR update, 2026-09-17
+
+- Primary Linux evidence: private trace of the installed `7.2.6-arch2-1`
+  kernel and offline inspection of its matching `vmlinux`. Running/image build
+  identifiers and probe instruction sites were checked. The report publishes
+  selected original measurement results, not kernel code or disassembly.
+- Explanatory Linux PCI implementation:
+  https://github.com/torvalds/linux/blob/master/drivers/pci/pci.c
+  and https://github.com/torvalds/linux/blob/master/drivers/pci/pci-driver.c.
+  Linux code retains its upstream GPL licensing; it is not relicensed under MIT.
+- Primary macOS evidence: existing private IORegistry snapshots and Unified Log
+  records from the controlled sleep on macOS 12.7.6, plus private offline analysis
+  of the local AppleThunderboltNHI driver. Its build identifier and logging call
+  sites were matched to the recorded messages. Only original observations and
+  interpretations are included here; Apple binaries and disassembly are excluded.
+
+## Earlier investigation
+
 - Original iBridge/Touch Bar driver investigated:
   https://github.com/roadrunner2/macbook12-spi-driver
   Local source checkout: ddfbc7733542b8474a0e8f593aba91e06542be4f.

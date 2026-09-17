@@ -11,11 +11,11 @@ on an Apple MacBookPro13,2. This is an investigation log, not a working suspend 
 
 | Component | Observed behavior |
 | --- | --- |
-| Local console and keyboard | Worked after the latest short s2idle cycle |
+| Local console and keyboard | Worked after the latest instrumented s2idle cycle |
 | Thunderbolt / external USB3 | Controllers became inaccessible after that cycle |
 | Wi-Fi | Replied to 3/5 immediate post-resume pings; first two were lost |
 | Touch Bar | Lighting and mode switching worked with locally adapted drivers; those modules were absent in the latest cycle |
-| Sleep | Latest cycle woke early, after about 7 seconds in the machine-suspend phase |
+| Sleep | Latest machine-suspend phase lasted about 120 seconds; controller recovery still failed |
 
 The test machine reported Arch Linux kernel `7.2.6-arch2-1`, firmware
 `529.120.1.0.0`, and the boot option `pcie_port_pm=off`. Findings are specific
@@ -25,7 +25,8 @@ to this configuration. The external storage device was disconnected for testing.
 
 - [Linux installation and configuration](docs/linux-setup.md)
 
-- [Latest experiment and analysis](docs/2026-09-17-s2idle.md)
+- [Latest native PMCSR measurements and macOS comparison](docs/2026-09-17-native-pmcsr.md)
+- [Earlier short s2idle experiment](docs/2026-09-17-s2idle.md)
 - [Earlier observations and limitations](docs/background.md)
 - [Diagnostic script and usage](scripts/README.md)
 - [Selected, sanitized trace evidence](data/2026-09-17/README.md)
@@ -34,6 +35,11 @@ to this configuration. The external storage device was disconnected for testing.
 The firmware power-on methods were called, but the Thunderbolt register-access
 sequence did not reach its write step. ACPI power calls still returned success.
 The underlying loss of device access remains unexplained.
+
+New native PCI measurements show valid PMCSR values before D3 writes and
+`0xffff` readbacks about 50–53 ms later, before the respective ACPI power calls.
+The kernel initially masks these readbacks into state 3. This narrows the
+observed sequence but does not establish a recovery fix.
 
 ## Contributing observations
 
