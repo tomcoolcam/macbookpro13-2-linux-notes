@@ -1,5 +1,18 @@
 # Sources and attribution
 
+## LC sleep and ordering update, 2026-09-18
+
+- Primary evidence: private September 17–18 traces and September 18 read-only
+  SSD checks. The running kernel BTF supplied structure/bitfield layouts;
+  matching installed kernel disassembly validated instruction probes.
+- Linux Thunderbolt implementation, used to interpret function boundaries:
+  https://github.com/torvalds/linux/blob/master/drivers/thunderbolt/lc.c
+  and https://github.com/torvalds/linux/blob/master/drivers/thunderbolt/tb.c.
+- Linux PCI save/restore and PM dispatch: the `pci.c` and `pci-driver.c` sources
+  linked below. These GPL sources and the private GPL experiment module are
+  not included in, or relicensed by, this MIT documentation repository.
+- The power figure is a user report, with measurement limitations in the report.
+
 ## Native PMCSR update, 2026-09-17
 
 - Primary Linux evidence: private trace of the installed `7.2.6-arch2-1`
